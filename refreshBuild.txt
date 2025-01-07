@@ -3,3 +3,4 @@ rm -rf Pods
 pod install
 
 rm -rf node_modules && npm install
+npm start --reset-cache
