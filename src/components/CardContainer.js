@@ -1,47 +1,72 @@
-import React from 'react';
-import '../styles/cardflip.css'; 
-import AOS from 'aos';
-import 'aos/dist/aos.css'; // Import the AOS CSS for animations to work
-
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity, Animated, Easing } from 'react-native';
+import styles from './CardContainer.styles';
 
 const CardContainer = () => {
-  
+  const [flipped, setFlipped] = useState({});
+
+  const toggleFlip = (index) => {
+    setFlipped((prevFlipped) => ({
+      ...prevFlipped,
+      [index]: !prevFlipped[index],
+    }));
+  };
+
+  const cardData = [
+    {
+      frontTitle: 'Sound Investments',
+      frontSubtitle: 'Based on Research',
+      backText: 'And Market Analysis',
+    },
+    {
+      frontTitle: 'Market Research',
+      frontSubtitle: 'Comprehensive Insights',
+      backText: 'For Smarter Investments',
+    },
+    {
+      frontTitle: 'Winning Strategies',
+      frontSubtitle: 'Powered by AI',
+      backText: 'To Outperform Markets',
+    },
+    {
+      frontTitle: 'Risk Management',
+      frontSubtitle: 'Hedge Strategies',
+      backText: 'For Downside Protection',
+    },
+  ];
+
   return (
-    
-    <section>
-    <div className="card-container" >
+    <View style={styles.cardContainer}>
+      {cardData.map((card, index) => {
+        const flipAnimation = flipped[index]
+          ? { transform: [{ rotateY: '180deg' }] }
+          : { transform: [{ rotateY: '0deg' }] };
 
-    <div className="card" > {/* data-aos="flip-right" data-aos-duration={2000}*/}
-      
-    <h1>Sound Investments</h1>
-     <h2>Based on Research</h2> 
-      <h3>And Market Analysis</h3>
-     
-      </div>
-    
-    <div className="card" > {/* data-aos="flip-right" data-aos-duration={2000}*/}
-      
-    <h1>Market Research</h1> 
-      <h2>Comprehensive Insights</h2> 
-        <h3>For Smarter Investments</h3>
-    </div>
-    <div className="card" > {/* data-aos="flip-right" data-aos-duration={2000}*/}
-      
-    <h1>Winning Strategies</h1> 
-      <h2>Powered by AI</h2> 
-        <h3>To Outperform Markets</h3>
-      
-    </div>
-    <div className="card" > {/* data-aos="flip-right" data-aos-duration={2000}*/}
-      
-    <h1>Risk Management</h1> 
-      <h2>Hedge Strategies</h2> 
-        <h3>For Downside Protection</h3>
-    </div>
-    </div>
+        return (
+          <View key={index} style={styles.card}>
+            <Animated.View style={[styles.cardInner, flipAnimation]}>
+              <View style={styles.cardFront}>
+                <Text style={styles.heading}>{card.frontTitle}</Text>
+                <Text style={styles.subHeading}>{card.frontSubtitle}</Text>
+                <Text>{card.backText}</Text>
+                <TouchableOpacity style={styles.button} onPress={() => toggleFlip(index)}>
+                  <Text style={styles.buttonText}>Learn More</Text>
+                </TouchableOpacity>
+              </View>
 
-</section>
-
-)};
+              <View style={styles.cardBack}>
+                <Text style={styles.heading}>{card.frontTitle}</Text>
+                <Text style={styles.subHeading}>{card.backText}</Text>
+                <TouchableOpacity style={styles.button} onPress={() => toggleFlip(index)}>
+                  <Text style={styles.buttonText}>Go Back</Text>
+                </TouchableOpacity>
+              </View>
+            </Animated.View>
+          </View>
+        );
+      })}
+    </View>
+  );
+};
 
 export default CardContainer;

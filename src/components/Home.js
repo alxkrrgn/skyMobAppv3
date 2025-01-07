@@ -1,31 +1,31 @@
 // src/Home.js
 import React from 'react';
-import '../styles/FooterResponsive.css';
-import '../styles/Home.css'; // Import the CSS file for styling
-import '../styles/App.css'; // Import the CSS file for styling
+//import '../styles/FooterResponsive.css';
+//import '../styles/Home.css'; // Import the CSS file for styling
+//import '../styles/App.css'; // Import the CSS file for styling
 //import '../styles/styles2.css'; // Import the CSS file for styling
 //import '../styles/footer.css'; // Import the CSS file for styling
 //import '../styles/mobileShatteredGlassDiamond_bg.css'; // Import the CSS file for styling
 //import '../styles/loginform.css'; // Import the CSS file for styling
 //import '../styles/style_mobile.css'; // Import the CSS file for styling
-import '../styles/hero.scss'; // Import the CSS file for styling
-import '../styles/parallaxLongCall.css'; // Import the CSS file for styling
-import '../styles/cards.css'; // Import the CSS file for styling
-import '../styles/cta-button.css'; // Import the CSS file for styling
+//import '../styles/hero.scss'; // Import the CSS file for styling
+//import '../styles/parallaxLongCall.css'; // Import the CSS file for styling
+//import '../styles/cards.css'; // Import the CSS file for styling
+//import '../styles/cta-button.css'; // Import the CSS file for styling
 //import 'aos/dist/aos.css';
-import '../styles/cta-button.scss'; // Import the CSS file for styling
-import '../styles/cardflip.css'; // Import the CSS file for styling
-import '../styles/grids.css'; // Import the CSS file for styling
+//import '../styles/cta-button.scss'; // Import the CSS file for styling
+//import '../styles/cardflip.css'; // Import the CSS file for styling
+//import '../styles/grids.css'; // Import the CSS file for styling
 //import '../styles/responsiveCards.css'; // Import the CSS file for styling
-import '../styles/buttons.scss'; // Import the CSS file for styling
+//import '../styles/buttons.scss'; // Import the CSS file for styling
 import { Parallax } from 'react-parallax';
 //import VideoBackground from './ReactPlayer';
 //import '../styles/videoAspectRatio169.css'; // Import the CSS file for styling
 //import '../styles/noise.css'; // Import the CSS file for styling
 //import '../styles/FloatingColorOrbs.scss'; // Import the CSS file for styling
 //import '../styles/squareAnimation.css'; // Import the CSS file for styling
-import '../styles/PixelStars.scss'; // Import the CSS file for styling
-import '../styles/parallax.css'; // Import the CSS file for styling
+//import '../styles/PixelStars.scss'; // Import the CSS file for styling
+//import '../styles/parallax.css'; // Import the CSS file for styling
 import CardContainer from './CardContainer';
 import AosSection from './AosSection';
 import GridContainer from './GridContainer';

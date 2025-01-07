@@ -9,7 +9,7 @@
 
 .card {
   width: 40vw;
-  height: 40vh;
+  height: 33vh;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.6s ease-in-out;
@@ -75,6 +75,6 @@
   }
   .card {
     width: 90vw;
-    height: 40vh;
+    height: 33vh;
   }
-}/*# sourceMappingURL=FlipCards.css.map */
+}/*# sourceMappingURL=FlipCards_old.css.map */

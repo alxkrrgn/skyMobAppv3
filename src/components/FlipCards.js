@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import "../styles/FlipCards.scss";
+import React, { useState } from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
+import styles from './FlipCards.styles'; // Import the new styles
 
 const FlipCards = () => {
   const [flippedCards, setFlippedCards] = useState({}); // Track flip states for cards by index
@@ -39,32 +40,36 @@ const FlipCards = () => {
   ];
 
   return (
-    <section className="card-container">
+    <View style={styles.cardContainer}>
       {cardData.map((card, index) => (
-        <div
+        <View
           key={index}
-          className={`card ${flippedCards[index] ? "flipped" : ""}`}
+          style={[
+            styles.card,
+            flippedCards[index] && styles.cardFlipped,
+          ]}
         >
-          <div className="card-inner">
-            <div className="card-front">
-              <h1>{card.frontTitle}</h1>
-              <h2>{card.frontSubtitle}</h2>
-              <button className="button-81" onClick={() => toggleFlip(index)}>
-                Learn More
-              </button>
-            </div>
-            <div className="card-back">
-              <h3>{card.backText}</h3>
-              <button className="button-81" onClick={() => toggleFlip(index)}>
-                Go Back
-              </button>
-            </div>
-          </div>
-        </div>
+          <View style={styles.cardInner}>
+            <View style={styles.cardFront}>
+              <Text>{card.frontTitle}</Text>
+              <Text>{card.frontSubtitle}</Text>
+              <TouchableOpacity style={styles.button} onPress={() => toggleFlip(index)}>
+                <Text style={styles.buttonText}>Learn More</Text>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.cardBack}>
+              <Text>{card.backText}</Text>
+              <TouchableOpacity style={styles.button} onPress={() => toggleFlip(index)}>
+                <Text style={styles.buttonText}>Go Back</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
       ))}
-    </section>
+    </View>
   );
 };
 
 export default FlipCards;
+
 
